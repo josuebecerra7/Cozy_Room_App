@@ -1,0 +1,343 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Cozy Classroom &middot; </title>
+      <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+      <link href="/static/js/toolkit-inverse.css" rel="stylesheet">
+      <link href="/static/js/application.css" rel="stylesheet">
+
+      <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+      </style>
+  </head>
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 sidebar">
+        <nav class="sidebar-nav">
+          <div class="sidebar-header">
+            <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
+              <span class="sr-only">Toggle nav</span>
+            </button>
+            <a class="sidebar-brand img-responsive" href="index.html">
+              <span class="icon icon-leaf sidebar-brand-icon"></span>
+            </a>
+          </div>
+
+          <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
+            <ul class="nav nav-pills nav-stacked flex-column">
+              <li class="nav-header">Options</li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/about_api">API</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "href="/about">About</a>
+              </li>
+            </ul>
+            <hr class="visible-xs mt-3">
+          </div>
+        </nav>
+      </div>
+      <div class="col-md-9 content">
+        <div class="dashhead">
+  <div class="dashhead-titles">
+    <h2 class="dashhead-title">Cozy Classroom</h2>
+  </div>
+
+  <div class="btn-toolbar dashhead-toolbar">
+    <div class="btn-toolbar-item input-with-icon">
+      <span class="icon">Maybe a nice icon here</span>
+    </div>
+  </div>
+</div>
+
+<hr class="mt-3">
+
+<form>
+    <div class="form-group row">
+        <label for="inputIndex1" class="col-sm-2 col-form-label">Index1</label>
+        <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputIndex1" placeholder="Index 1 importance (/10)">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputIndex2" class="col-sm-2 col-form-label">Index2</label>
+        <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputIndex2" placeholder="Index 2 importance (/10)">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputIndex3" class="col-sm-2 col-form-label">Index3</label>
+        <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputIndex3" placeholder="Index 3 importance (/10)">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputIndex4" class="col-sm-2 col-form-label">Index4</label>
+        <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputIndex4" placeholder="Index 4 importance (/10)">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-5 offset-sm-2">
+            <button type="submit" class="btn btn-primary">View results</button>
+        </div>
+    </div>
+</form>
+
+
+<div class="hr-divider mt-5 mb-3">
+  <h3 class="hr-divider-content hr-divider-heading">Results</h3>
+</div>
+
+          <div class="row text-center mt-5">
+  <div class="col-md-3 mb-2 mb-md-4">
+    <div class="w-3 mx-auto">
+      <canvas
+        id="index1"
+        class="ex-graph"
+        width="150" height="150"
+        data-chart="doughnut"
+        data-dataset="[360, 0]"
+        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+        data-labels="['Returning', 'New']">
+      </canvas>
+    </div>
+    <h4>Index1</h4>
+  </div>
+      <div class="col-md-3 mb-2 mb-md-2">
+    <div class="w-3 mx-auto">
+      <canvas
+        id="index2"
+        class="ex-graph"
+        width="150" height="150"
+        data-chart="doughnut"
+        data-dataset="[360, 0]"
+        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+        data-labels="['Returning', 'New']">
+      </canvas>
+    </div>
+    <h4>Index2</h4>
+  </div>
+  <div class="col-md-3 mb-4 mb-md-2">
+    <div class="w-3 mx-auto">
+      <canvas
+        id="index3"
+        class="ex-graph"
+        width="150" height="150"
+        data-chart="doughnut"
+        data-dataset="[0,360]"
+        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#800000', '#FF0000'] }"
+        data-labels="['Returning', 'New']">
+      </canvas>
+    </div>
+    <h4>Index3</h4>
+  </div>
+  <div class="col-md-3 mb-4 mb-md-2">
+    <div class="w-3 mx-auto">
+      <canvas
+        id="index4"
+        class="ex-graph"
+        width="150" height="150"
+        data-chart="doughnut"
+        data-dataset="[100,260]"
+        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+        data-labels="['Referrals', 'Direct']">
+      </canvas>
+    </div>
+    <h4>Index4</h4>
+  </div>
+</div>
+
+<div class="row statcards">
+  <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+    <div class="statcard statcard-success">
+      <div class="p-3">
+        <span class="statcard-desc">Index1</span>
+        <h2 class="statcard-number">
+          4
+          <small class="delta-indicator delta-positive">30%</small>
+        </h2>
+        <hr class="statcard-hr mb-0">
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+        data-chart="spark-line"
+        data-dataset="[[28,68,41,43,96,45,100]]"
+        data-labels="['a','b','c','d','e','f','g']"
+        style="width: 189px; height: 47px;">
+      </canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+    <div class="statcard statcard-danger">
+      <div class="p-3">
+        <span class="statcard-desc">Index2</span>
+        <h2 class="statcard-number">
+          3.5
+          <small class="delta-indicator delta-negative">20%</small>
+        </h2>
+        <hr class="statcard-hr mb-0">
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+        data-chart="spark-line"
+        data-dataset="[[4,34,64,27,96,50,80]]"
+        data-labels="['a', 'b','c','d','e','f','g']"
+        style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+    <div class="statcard statcard-info">
+      <div class="p-3">
+        <span class="statcard-desc">Index3</span>
+        <h2 class="statcard-number">
+          2
+          <small class="delta-indicator delta-positive">40%</small>
+        </h2>
+        <hr class="statcard-hr mb-0">
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+        data-chart="spark-line"
+        data-dataset="[[12,38,32,60,36,54,68]]"
+        data-labels="['a', 'b','c','d','e','f','g']"
+        style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+    <div class="statcard statcard-warning">
+      <div class="p-3">
+        <span class="statcard-desc">Index4</span>
+        <h2 class="statcard-number">
+          3.5
+          <small class="delta-indicator delta-negative">10%</small>
+        </h2>
+        <hr class="statcard-hr mb-0">
+      </div>
+      <canvas id="sparkline1" width="378" height="94" class="sparkline"
+        data-chart="spark-line"
+        data-dataset="[[43,48,52,58,50,95,100]]"
+        data-labels="['a', 'b','c','d','e','f','g']"
+        style="width: 189px; height: 47px;"></canvas>
+    </div>
+  </div>
+</div>
+
+<hr class="mt-5">
+
+<div class="row">
+  <div class="col-md-3 mb-5">
+  </div>
+  <div class="col-md-6 mb-5">
+    <div class="list-group mb-3">
+      <h6 class="list-group-header">
+        Detailed data
+      </h6>
+      
+        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+          <span>Temperature</span>
+          <span class="mr-a text-muted">3,929,481</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+          <span>/ (Logged in)</span>
+          <span class="mr-a text-muted">1,143,393</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+          <span>/tour</span>
+          <span class="mr-a text-muted">938,287</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+          <span>/features/something</span>
+          <span class="mr-a text-muted">749,393</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+          <span>/features/another-thing</span>
+          <span class="mr-a text-muted">695,912</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+          <span>/users/username</span>
+          <span class="mr-a text-muted">501,938</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+          <span>/page-title</span>
+          <span class="mr-a text-muted">392,842</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+          <span>/some/page-slug</span>
+          <span class="mr-a text-muted">298,183</span>
+        </a>
+    </div>
+    <a href="#" class="btn btn-outline-primary px-3">View all data through API</a>
+  </div>
+</div>
+
+
+	
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+
+    <script>
+        window.onload = function () {
+            loadIndexes();
+        }
+        function loadIndexes() {
+            var ctx1 = document.getElementById('index1').getContext('2d');
+            var ctx2 = document.getElementById('index2').getContext('2d');
+            var ctx3 = document.getElementById('index3').getContext('2d');
+            var ctx4 = document.getElementById('index4').getContext('2d');
+
+            var ind1 = 4;
+            var ind2 = 3.5;
+            var ind3 = 2;
+            var ind4 = 2.5;
+            ctx1.font = "30px Georgia";
+            ctx2.font = "30px Georgia";
+            ctx3.font = "30px Georgia";
+            ctx4.font = "30px Georgia";
+
+            ctx1.fillText(ind1 + "/5", 40, 75);
+            ctx2.fillText(ind2 + "/5", 40, 75);
+            ctx3.fillText(ind3 + "/5", 40, 75);
+            ctx4.fillText(ind4 + "/5", 40, 75);
+        }
+       
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  	<script src="/static/js/getrequest.js"></script>
+    <script src="/static/js/equations.js"></script>
+    <script src="/static/js/tether.min.js"></script>
+    <script src="/static/js/chart.js"></script>
+    <script src="/static/js/tablesorter.min.js"></script> <!-- This line is for canvas circles-->
+  	<script src="/static/js/toolkit.js"></script> <!-- This line is for canvas circles-->
+  	<script src="/static/js/application.js"></script> <!-- This line is for canvas circles-->
+  </body>
+</html>
+
