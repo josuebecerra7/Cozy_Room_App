@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -68,11 +68,21 @@
             <div class="col-sm-5">
               <input type="number" class="form-control" id="inputIndex1" placeholder="Heat Index importance (0 to 100)">
             </div>
+			<div class="col-sm-2" data-toggle="tooltip" data-placement="top">
+				<a data-toggle="tooltip" title="This represents the temperature felt. It is calculated by taking the humidity in consideration">
+					<i class="fas fa-question-circle"></i>
+				</a>
+            </div>
           </div>
           <div class="form-group row">
             <label for="inputIndex2" class="col-sm-2 col-form-label">Air Quality Index</label>
             <div class="col-sm-5">
               <input type="number" class="form-control" id="inputIndex2" placeholder="Air Index importance (0 to 100)">
+            </div>
+			<div class="col-sm-2" data-toggle="tooltip" data-placement="top">
+				<a data-toggle="tooltip" title="This index is calculated using the data from the levels of CO2, NO2 and PM10.">
+					<i class="fas fa-question-circle"></i>
+				</a>
             </div>
           </div>
           <div class="form-group row">
@@ -81,12 +91,22 @@
               <input type="number" class="form-control" id="inputIndex3"
                 placeholder="Light Index importance (0 to 100)">
             </div>
+			<div class="col-sm-2" data-toggle="tooltip" data-placement="top">
+				<a data-toggle="tooltip" title="This reflects the lightning adecacy in the room">
+					<i class="fas fa-question-circle"></i>
+				</a>
+            </div>
           </div>
           <div class="form-group row">
             <label for="inputIndex4" class="col-sm-2 col-form-label">Sound Index</label>
             <div class="col-sm-5">
               <input type="number" class="form-control" id="inputIndex4"
                 placeholder="Sound Index importance (0 to 100)">
+            </div>
+			<div class="col-sm-2" data-toggle="tooltip" data-placement="top">
+				<a data-toggle="tooltip" title="This is an index of comfortability in terms of noise">
+					<i class="fas fa-question-circle"></i>
+				</a>
             </div>
           </div>
           <div class="form-group row">
@@ -100,32 +120,6 @@
         <div class="hr-divider mt-5 mb-3">
           <h3 class="hr-divider-content hr-divider-heading">Results</h3>
         </div>
-<<<<<<< HEAD
-        <h2>Indexes</h2>
-        <p>this code is in the file equations.js</p>
-        <div id="div_time" style="width: 500px; height: 80px;"></div>
-        <h4>Heat Index</h4>
-        <div id="chart_div_heat_index" style="width: 500px; height: 150px;"></div>
-        <div id="value_div_heat_index" style="width: 500px; height: 60px;"></div>
-        <h4>Air Quality Index</h4>
-        <div id="chart_div_air_index" style="width: 500px; height: 150px;"></div>
-        <div id="value_div_air_index" style="width: 500px; height: 60px;"></div>
-        <h4>Light Index</h4>
-        <div id="chart_div_light_index" style="width: 500px; height: 150px;"></div>
-        <div id="value_div_light_index" style="width: 500px; height: 60px;"></div>
-        <h4>Noise Index</h4>
-        <div id="chart_div_sound_index" style="width: 500px; height: 150px;"></div>
-        <div id="value_div_sound_index" style="width: 500px; height: 60px;"></div>
-        <h2>Room Conditions</h2>
-        <p>this code is in the file gauges.js</p>
-        <div id="chart_div_temp" style="width: 110px; height: 110px;"></div>
-        <div id="chart_div_hum" style="width: 110px; height: 110px;"></div>
-        <div id="chart_div_light" style="width: 110px; height: 110px;"></div>
-        <div id="chart_div_sound" style="width: 110px; height: 110px;"></div>
-        <div id="chart_div_pm10" style="width: 110px; height: 110px;"></div>
-        <div id="chart_div_no2" style="width: 110px; height: 110px;"></div>
-        <div id="chart_div_co2" style="width: 110px; height: 110px;"></div>
-=======
         <h3 style="text-align: center;">
           <div id="div_time" style="width: 800px; height: 10px;"></div>
         </h3>
@@ -141,7 +135,6 @@
             </h1>
           </div>
         </div>
->>>>>>> yacine
 
 
         <!-- ======Row of indexes====== -->
@@ -230,9 +223,11 @@
       </div>
     </div>
 
+	<script src="https://kit.fontawesome.com/ceaed2f59c.js" crossorigin="anonymous"></script>
     <script src="/static/js/toggle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"></script>
