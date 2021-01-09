@@ -6,22 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="">
+  <meta name="keywords" content="IoT, Sensors, Coziness">
+  <meta name="author" content="Josue Becerra, Yacine Rabehi, Wania Khan">
   <title>Cozy Classroom &middot; </title>
   <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
   <link href="/static/js/toolkit-inverse.css" rel="stylesheet">
   <link href="/static/js/application.css" rel="stylesheet">
-
-  <style>
-    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
-    /* this chunk of css is not part of the toolkit :) */
-    body {
-      width: 1px;
-      min-width: 100%;
-      *width: 100%;
-    }
-  </style>
 </head>
 
 
@@ -35,7 +25,7 @@
               data-target="#nav-toggleable-md">
               <span class="sr-only">Toggle nav</span>
             </button>
-            <a class="sidebar-brand img-responsive" href="index.html">
+            <a class="sidebar-brand img-responsive" href="/">
               <span class="icon icon-leaf sidebar-brand-icon"></span>
             </a>
           </div>
@@ -65,7 +55,7 @@
 
           <div class="btn-toolbar dashhead-toolbar">
             <div class="btn-toolbar-item input-with-icon">
-              <span class="icon">Maybe a nice icon here</span>
+
             </div>
           </div>
         </div>
@@ -74,32 +64,34 @@
 
         <form>
           <div class="form-group row">
-            <label for="inputIndex1" class="col-sm-2 col-form-label">Index1</label>
+            <label for="inputIndex1" class="col-sm-2 col-form-label">Heat Index</label>
             <div class="col-sm-5">
-              <input type="email" class="form-control" id="inputIndex1" placeholder="Index 1 importance (/10)">
+              <input type="number" class="form-control" id="inputIndex1" placeholder="Heat Index importance (0 to 100)">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputIndex2" class="col-sm-2 col-form-label">Index2</label>
+            <label for="inputIndex2" class="col-sm-2 col-form-label">Air Quality Index</label>
             <div class="col-sm-5">
-              <input type="email" class="form-control" id="inputIndex2" placeholder="Index 2 importance (/10)">
+              <input type="number" class="form-control" id="inputIndex2" placeholder="Air Index importance (0 to 100)">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputIndex3" class="col-sm-2 col-form-label">Index3</label>
+            <label for="inputIndex3" class="col-sm-2 col-form-label">Light Index</label>
             <div class="col-sm-5">
-              <input type="email" class="form-control" id="inputIndex3" placeholder="Index 3 importance (/10)">
+              <input type="number" class="form-control" id="inputIndex3"
+                placeholder="Light Index importance (0 to 100)">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputIndex4" class="col-sm-2 col-form-label">Index4</label>
+            <label for="inputIndex4" class="col-sm-2 col-form-label">Sound Index</label>
             <div class="col-sm-5">
-              <input type="email" class="form-control" id="inputIndex4" placeholder="Index 4 importance (/10)">
+              <input type="number" class="form-control" id="inputIndex4"
+                placeholder="Sound Index importance (0 to 100)">
             </div>
           </div>
           <div class="form-group row">
             <div class="col-sm-5 offset-sm-2">
-              <button type="submit" class="btn btn-primary">View results</button>
+              <button id="get_button" type="submit" class="btn btn-primary">View results</button>
             </div>
           </div>
         </form>
@@ -108,6 +100,7 @@
         <div class="hr-divider mt-5 mb-3">
           <h3 class="hr-divider-content hr-divider-heading">Results</h3>
         </div>
+<<<<<<< HEAD
         <h2>Indexes</h2>
         <p>this code is in the file equations.js</p>
         <div id="div_time" style="width: 500px; height: 80px;"></div>
@@ -132,76 +125,122 @@
         <div id="chart_div_pm10" style="width: 110px; height: 110px;"></div>
         <div id="chart_div_no2" style="width: 110px; height: 110px;"></div>
         <div id="chart_div_co2" style="width: 110px; height: 110px;"></div>
-
-        <hr class="mt-5">
-
-        <div class="row">
-          <div class="col-md-3 mb-5">
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="list-group mb-3">
-              <h6 class="list-group-header">
-                Detailed data
-              </h6>
-
-              <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                <span>Temperature</span>
-                <span class="mr-a text-muted">3,929,481</span>
-              </a>
-
-              <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                <span>/ (Logged in)</span>
-                <span class="mr-a text-muted">1,143,393</span>
-              </a>
-
-              <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                <span>/tour</span>
-                <span class="mr-a text-muted">938,287</span>
-              </a>
-
-              <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                <span>/features/something</span>
-                <span class="mr-a text-muted">749,393</span>
-              </a>
-
-              <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                <span>/features/another-thing</span>
-                <span class="mr-a text-muted">695,912</span>
-              </a>
-
-              <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                <span>/users/username</span>
-                <span class="mr-a text-muted">501,938</span>
-              </a>
-
-              <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                <span>/page-title</span>
-                <span class="mr-a text-muted">392,842</span>
-              </a>
-
-              <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                <span>/some/page-slug</span>
-                <span class="mr-a text-muted">298,183</span>
-              </a>
+=======
+        <h3 style="text-align: center;">
+          <div id="div_time" style="width: 800px; height: 10px;"></div>
+        </h3>
+        <!--Final for final index-->
+        <div class="row text-center mt-5">
+          <div class="col-md-3 mb-2 mb-md-4"></div>
+          <div class="col-md-3 mb-2 mb-md-4">
+            <div id="chart_div_final_index" style="width: 550px; height: 350px;" class="w-3 mx-auto">
+              <!-- Final Index gauge will be here -->
             </div>
-            <a href="#" class="btn btn-outline-primary px-3">View all data through API</a>
+            <h1>
+              <div id="value_div_final_index" style="width: 400px; height: 20px;"></div>
+            </h1>
+          </div>
+        </div>
+>>>>>>> yacine
+
+
+        <!-- ======Row of indexes====== -->
+        <div class="row text-center mt-5">
+          <div class="col-md-3 mb-2 mb-md-4">
+            <div id="chart_div_heat_index" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- Heat Index gauge will be here -->
+            </div>
+            <h4> <div id="value_div_heat_index" style="width: 180px; height: 60px;"></div></h4>
+          </div>
+          <div class="col-md-3 mb-2 mb-md-2">
+            <div id="chart_div_light_index" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- Light index gauge will be here -->
+            </div>
+            <h4> <div id="value_div_light_index" style="width: 180px; height: 60px;"></div></h4>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-2">
+            <div id="chart_div_sound_index" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- Sound index gauge will be here -->
+            </div>
+            <h4> <div id="value_div_sound_index" style="width: 180px; height: 60px;"></div> </h4>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-2">
+            <div id="chart_div_air_index" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- Air quality index gauge will be here -->
+            </div>
+            <h4> <div id="value_div_air_index" style="width: 180px; height: 60px;"></div> </h4>
           </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.js"
-          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-          crossorigin="anonymous"></script>
-        <script src="/static/js/getrequest.js"></script>
-        <script src="/static/js/equations.js"></script>
-        <script src="/static/js/tether.min.js"></script>
-        <script src="/static/js/chart.js"></script>
-        <script src="/static/js/tablesorter.min.js"></script> <!-- This line is for canvas circles-->
-        <script src="/static/js/toolkit.js"></script> <!-- This line is for canvas circles-->
-        <script src="/static/js/application.js"></script> <!-- This line is for canvas circles-->
-        <script type="text/javascript" src="static/js/loader.js"></script>
-        <script type="text/javascript" src="static/js/gauges.js"></script>
+        <!-- <button onclick="hideValues()">Show more details</button> -->
+        <button onclick="hideValues()">Show Current Data</button>
+        <!-- ======First row of sensor values====== -->
+        <div class="row text-center mt-5">
+
+          <div class="col-md-3 mb-2 mb-md-2" id="coltemp">
+            <div id="chart_div_temp" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- Temperature gauge will be here -->
+            </div>
+            <h4>Temperature</h4>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-2" id="collight">
+            <div id="chart_div_light" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- Light gauge will be here -->
+            </div>
+            <h4>Light</h4>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-2" id="colsound">
+            <div id="chart_div_sound" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- Sound gauge will be here -->
+            </div>
+            <h4>Noise</h4>
+          </div>
+          <div class="col-md-3 mb-2 mb-md-4" id="colhumid">
+            <div id="chart_div_hum" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- Humidity gauge will be here -->
+            </div>
+            <h4>Humidity</h4>
+          </div>
+        </div>
+
+        <!-- ======Second row of sensor values====== -->
+        <div class="row text-center mt-5">
+          <div class="col-md-3 mb-2 mb-md-2 " id="colco2">
+            <div id="chart_div_co2" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- CO2 gauge will be here -->
+            </div>
+            <h4>CO2</h4>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-2" id="colpm10">
+            <div id="chart_div_pm10" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- PM10 gauge will be here -->
+            </div>
+            <h4>PM10</h4>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-2" id="colno2">
+            <div id="chart_div_no2" style="width: 500px; height: 150px;" class="w-3 mx-auto">
+              <!-- NO2 gauge will be here -->
+            </div>
+            <h4>NO2</h4>
+          </div>
+        </div>
+
+
+        <hr class="mt-5">
+      </div>
+    </div>
+
+    <script src="/static/js/toggle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+    <script src="/static/js/getrequest.js"></script>
+    <script src="/static/js/equations.js"></script>
+    <script src="/static/js/tether.min.js"></script>
+    <script type="text/javascript" src="static/js/loader.js"></script>
+    <script type="text/javascript" src="static/js/gauges.js"></script>
 </body>
 
 </html>

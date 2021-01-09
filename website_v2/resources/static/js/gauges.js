@@ -43,14 +43,15 @@ setInterval(function() {
 //////////////////TEMPERATURE///////////////////  
 function drawChart_temp() {
   var jsonData =  API_get();
+  var temperature = Math.round(jsonData.temperature * 100) / 100;
   // Create our data table out of JSON data loaded from MongoDB.
   var data = google.visualization.arrayToDataTable([
     ['Label', 'Value'],
-    ['Temperature', jsonData.temperature]
+    ['Temperature', temperature]
   ]);
   // Gauge Configuration
   var options_temp = {
-    width: 110, height: 110, min: 0, max: 35,
+    width: 130, height: 130, min: 0, max: 35,
     greenFrom: 18, greenTo: 23,
     redFrom: 27, redTo: 35,
     yellowFrom:23, yellowTo: 27,
@@ -63,7 +64,8 @@ function drawChart_temp() {
   // Update data every 10 seconds
   setInterval(function() {
     var jsonData =  API_get();
-    data.setValue(0, 1, jsonData.temperature);
+    var temperature = Math.round(jsonData.temperature * 100) / 100;
+    data.setValue(0, 1, temperature);
     chart.draw(data, options_temp);
   }, 10000);
 }
@@ -71,14 +73,15 @@ function drawChart_temp() {
 //////////////////Humidity///////////////////  
 function drawChart_hum() {
   var jsonData =  API_get();
+  var humidity = temperature = Math.round(jsonData.humidity * 100) / 100;
   // Create our data table out of JSON data loaded from MongoDB.
   var data = google.visualization.arrayToDataTable([
     ['Label', 'Value'],
-    ['Humidity', jsonData.humidity]
+    ['Humidity', humidity]
   ]);
   // Gauge Configuration
   var options_hum = {
-    width: 110, height: 110, min: 0, max: 100,
+    width: 130, height: 130, min: 0, max: 100,
     greenFrom: 30, greenTo: 60,
     redFrom: 80, redTo: 100,
     yellowFrom:60, yellowTo: 80,
@@ -91,7 +94,8 @@ function drawChart_hum() {
   // Update data every 10 seconds
   setInterval(function() {
     var jsonData =  API_get();
-    data.setValue(0, 1, jsonData.humidity);
+    var humidity = temperature = Math.round(jsonData.humidity * 100) / 100;
+    data.setValue(0, 1, humidity);
     chart.draw(data, options_hum);
   }, 10000);
 }
@@ -100,14 +104,15 @@ function drawChart_hum() {
 function drawChart_light() {
 // extract latest data from the db using the API
 var jsonData =  API_get();
+var light = Math.round(jsonData.light * 100) / 100;
 // Create our data table out of JSON data loaded from MongoDB.
   var data = google.visualization.arrayToDataTable([
     ['Label', 'Value'],
-    ['Light', jsonData.light]
+    ['Light', light]
   ]);
   // Gauge Configuration
   var options_light = {
-    width: 110, height: 110, min: 0, max: 700,
+    width: 130, height: 130, min: 0, max: 700,
     greenFrom: 200, greenTo: 500,
     redFrom: 600, redTo: 700,
     yellowFrom:500, yellowTo: 600,
@@ -121,6 +126,7 @@ var jsonData =  API_get();
   setInterval(function() {
     // Parse the responseText to JSON
     var jsonData =  API_get();
+    var light = Math.round(light * 100) / 100;
     data.setValue(0, 1, jsonData.light);
     chart.draw(data, options_light);
   }, 10000);
@@ -130,17 +136,18 @@ var jsonData =  API_get();
 function drawChart_sound() {
   // extract latest data from the db using the API
   var jsonData =  API_get();
+  var sound = Math.round(jsonData.sound * 100) / 100;
   // Create our data table out of JSON data loaded from MongoDB.
     var data = google.visualization.arrayToDataTable([
       ['Label', 'Value'],
-      ['Noise', jsonData.sound]
+      ['Noise', sound]
     ]);
     // Gauge Configuration
     var options_sound = {
-        width: 110, height: 110, min: 0, max: 50,
-        greenFrom: 0, greenTo: 30,
-        redFrom: 40, redTo: 50,
-        yellowFrom:30, yellowTo: 40,
+        width: 130, height: 130, min: 0, max: 800,
+        greenFrom: 0, greenTo: 200,
+        redFrom: 450, redTo: 800,
+        yellowFrom:200, yellowTo: 450,
         minorTicks: 5
       };
     // Associate Gauge to the html ID
@@ -150,7 +157,8 @@ function drawChart_sound() {
     // Update data every 10 seconds
     setInterval(function() {
       var jsonData =  API_get();
-      data.setValue(0, 1, jsonData.sound);
+      var sound = Math.round(jsonData.sound * 100) / 100;
+      data.setValue(0, 1, sound);
       chart.draw(data, options_sound);
     }, 10000);
   }
@@ -160,14 +168,15 @@ function drawChart_sound() {
 function drawChart_pm10() {
   // extract latest data from the db using the API
   var jsonData =  API_get();
+  var pm10 = Math.round(jsonData.air.pm10 * 100) / 100;
   // Create our data table out of JSON data loaded from MongoDB.
     var data = google.visualization.arrayToDataTable([
       ['Label', 'Value'],
-      ['PM10', jsonData.air.pm10]
+      ['PM10', pm10]
     ]);
     // Gauge Configuration
     var options_pm10 = {
-        width: 110, height: 110, min: 0, max: 50,
+        width: 130, height: 130, min: 0, max: 50,
         greenFrom: 0, greenTo: 30,
         redFrom: 40, redTo: 50,
         yellowFrom:30, yellowTo: 40,
@@ -179,14 +188,9 @@ function drawChart_pm10() {
     chart.draw(data, options_pm10);
     // Update data every 10 seconds
     setInterval(function() {
-      var data_api = $.ajax({
-        url: "/api/last",
-        dataType: "json",
-        async: false
-        }).responseText;
-       // Parse the responseText to JSON
-      var jsonData = $.parseJSON(data_api);
-      data.setValue(0, 1, jsonData.air.pm10);
+      var jsonData =  API_get();
+      var pm10 = Math.round(jsonData.air.pm10 * 100) / 100;
+      data.setValue(0, 1, pm10);
       chart.draw(data, options_pm10);
     }, 10000);
   }
@@ -195,14 +199,15 @@ function drawChart_pm10() {
 function drawChart_no2() {
   // extract latest data from the db using the API
   var jsonData =  API_get();
+  var no2 = Math.round(jsonData.air.no2 * 100) / 100;
   // Create our data table out of JSON data loaded from MongoDB.
     var data = google.visualization.arrayToDataTable([
       ['Label', 'Value'],
-      ['NO2', jsonData.air.no2]
+      ['NO2', no2]
     ]);
     // Gauge Configuration
     var options_no2 = {
-        width: 110, height: 110, min: 0, max: 250,
+        width: 130, height: 130, min: 0, max: 250,
         greenFrom: 0, greenTo: 80,
         redFrom: 200, redTo: 250,
         yellowFrom:80, yellowTo: 200,
@@ -214,14 +219,9 @@ function drawChart_no2() {
     chart.draw(data, options_no2);
     // Update data every 10 seconds
     setInterval(function() {
-      var data_api = $.ajax({
-        url: "/api/last",
-        dataType: "json",
-        async: false
-        }).responseText;
-       // Parse the responseText to JSON
-      var jsonData = $.parseJSON(data_api);
-      data.setValue(0, 1, jsonData.air.no2);
+      var jsonData =  API_get();
+      var no2 = Math.round(jsonData.air.no2 * 100) / 100;
+      data.setValue(0, 1, no2);
       chart.draw(data, options_no2);
     }, 10000);
   }
@@ -230,14 +230,15 @@ function drawChart_no2() {
 function drawChart_co2() {
   // extract latest data from the db using the API
   var jsonData =  API_get();
+  var co2 = Math.round(jsonData.air.co2);
   // Create our data table out of JSON data loaded from MongoDB.
     var data = google.visualization.arrayToDataTable([
       ['Label', 'Value'],
-      ['CO2', jsonData.air.co2]
+      ['CO2', co2]
     ]);
     // Gauge Configuration
     var options_co2 = {
-        width: 110, height: 110, min: 0, max: 5000,
+        width: 130, height: 130, min: 0, max: 5000,
         greenFrom: 0, greenTo: 1000,
         redFrom: 2000, redTo: 5000,
         yellowFrom:1000, yellowTo: 2000,
@@ -249,14 +250,9 @@ function drawChart_co2() {
     chart.draw(data, options_co2);
     // Update data every 10 seconds
     setInterval(function() {
-      var data_api = $.ajax({
-        url: "/api/last",
-        dataType: "json",
-        async: false
-        }).responseText;
-       // Parse the responseText to JSON
-      var jsonData = $.parseJSON(data_api);
-      data.setValue(0, 1, jsonData.air.co2);
+      var jsonData =  API_get();
+      var co2 = Math.round(jsonData.air.co2);
+      data.setValue(0, 1, co2);
       chart.draw(data, options_co2);
     }, 10000);
   }
