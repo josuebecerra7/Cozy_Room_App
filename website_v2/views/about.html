@@ -1,72 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Cozy Classroom &middot; </title>
-		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
-		<link href="/static/js/toolkit-inverse.css" rel="stylesheet">
-		<link href="/static/js/application.css" rel="stylesheet">
-		</head>
-	  
-	  
-	  <body>
-		<div class="container">
-		  <div class="row">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cozy Classroom &middot; </title>
+	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+	<link href="/static/js/toolkit-inverse.css" rel="stylesheet">
+	<link href="/static/js/application.css" rel="stylesheet">
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="row">
 			<div class="col-md-3 sidebar">
-			  <nav class="sidebar-nav">
-				<div class="sidebar-header">
-				  <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
-					<span class="sr-only">Toggle nav</span>
-				  </button>
-				  <a class="sidebar-brand img-responsive" href="/">
-					<span class="icon icon-leaf sidebar-brand-icon"></span>
-				  </a>
-				</div>
-	  
-				<div class="collapse nav-toggleable-md" id="nav-toggleable-md">
-				  <ul class="nav nav-pills nav-stacked flex-column">
-					<li class="nav-header">Options</li>
-					<li class="nav-item">
-					  <a class="nav-link " href="/">Home</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link " href="/about_api">API</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link active"href="/about">About</a>
-					</li>
-				  </ul>
-				  <hr class="visible-xs mt-3">
-				</div>
-			  </nav>
+				<nav class="sidebar-nav">
+					<div class="sidebar-header">
+						<button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse"
+							data-target="#nav-toggleable-md">
+							<span class="sr-only">Toggle nav</span>
+						</button>
+						<a class="sidebar-brand img-responsive" href="/">
+							<span class="icon icon-leaf sidebar-brand-icon"></span>
+						</a>
+					</div>
+
+					<div class="collapse nav-toggleable-md" id="nav-toggleable-md">
+						<ul class="nav nav-pills nav-stacked flex-column">
+							<li class="nav-header">Options</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/about_api">API</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="/about">About</a>
+							</li>
+						</ul>
+						<hr class="visible-xs mt-3">
+					</div>
+				</nav>
 			</div>
 			<div class="col-md-9 content">
-			  <div class="dashhead">
-		<div class="dashhead-titles">
-		  <h2 class="dashhead-title">About</h2>
-		</div>
-	  
-	  </div>
-	  
-	  <hr class="mt-3">
- 	<div id="content">
-		<section>					
-			<p>An efficient and easy to use website for monitoring of room comfort level based on the parameters such as temperature, sound and light. The air quality of the room is also calculated with emulation of variables such as carbon dioxide (Co2), nitrogen dioxide (No2) and particulate matter 10 (PM10). This website also provides an option of retrieving all the previous data through API. Furthermore, the room comfort level can be controlled by adjusting the defined parameters depending on one’s preference. The detailed information regarding calculated indexes can be found below. </p>		
-			<p>The Heat Index is a measure of how hot it really feels when relative humidity is factored in with the actual air temperature. It also includes parameters for average values of the skin's exposure to the sun, which will increase its temperature in relation to the air, and winds that help the evaporation of sweat and therefore the cooling of the skin. Exposure to full sunshine can increase heat index values. Also, strong winds, particularly with very hot, dry air, can be extremely hazardous.</p>
+				<div class="dashhead">
+					<div class="dashhead-titles">
+						<h2 class="dashhead-title">About</h2>
+					</div>
 
-			<p>An air quality index is a measure of air quality, allowing different data to be synthesized into a single value. It is defined by pollutant, depending on the quantity and type of this pollutant, considering parameters like CO2, NO2, PM10, etc. It applies to indoor air (public or private), to the air in the workplace and / or to the outdoor ambient air.</p>
-			<p align =" center "> <img src = "pictures\Capture.JPG"  alt = "standards" width="650" height="280" class="centerImage" ></p>
-</section>				
-	</div>
+				</div>
 
-        <footer class="footer">
-            <p align="center">Copyright (c) 2020</p>
-        </footer>
+				<hr class="mt-3">
+				<div id="content">
+					<section>
+						<p>An efficient and easy to use website for monitoring of room comfort level based on the
+							parameters such as temperature, sound and light. The air quality of the room is also
+							calculated with emulation of variables such as carbon dioxide (Co2), nitrogen dioxide (No2)
+							and particulate matter 10 (PM10). This website also provides an option of retrieving all the
+							previous data through API. Furthermore, the room comfort level can be controlled by
+							adjusting the defined parameters depending on one’s preference. The detailed information
+							regarding calculated indexes can be found below. </p>
+						<p>The Heat Index is a measure of how hot it really feels when relative humidity is factored in
+							with the actual air temperature. It also includes parameters for average values of the
+							skin's exposure to the sun, which will increase its temperature in relation to the air, and
+							winds that help the evaporation of sweat and therefore the cooling of the skin. Exposure to
+							full sunshine can increase heat index values. Also, strong winds, particularly with very
+							hot, dry air, can be extremely hazardous.</p>
 
-		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-		<script src="/static/js/application.js"></script> <!-- This line is for canvas circles-->
- </body>
+						<p>An air quality index is a measure of air quality, allowing different data to be synthesized
+							into a single value. It is defined by pollutant, depending on the quantity and type of this
+							pollutant, considering parameters like CO2, NO2, PM10, etc. It applies to indoor air (public
+							or private), to the air in the workplace and / or to the outdoor ambient air.</p>
+						<p align=" center "> <img src="pictures\Capture.JPG" alt="standards" width="650" height="280"
+								class="centerImage"></p>
+					</section>
+				</div>
+
+
+				<script src="https://code.jquery.com/jquery-3.5.1.js"
+					integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+					integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+					crossorigin="anonymous"></script>
+</body>
 
 </html>
