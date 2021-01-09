@@ -6,22 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="">
+  <meta name="keywords" content="IoT, Sensors, Coziness">
+  <meta name="author" content="Josue Becerra, Yacine Rabehi, Wania Khan">
   <title>Cozy Classroom &middot; </title>
   <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
   <link href="/static/js/toolkit-inverse.css" rel="stylesheet">
   <link href="/static/js/application.css" rel="stylesheet">
-
-  <style>
-    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
-    /* this chunk of css is not part of the toolkit :) */
-    body {
-      width: 1px;
-      min-width: 100%;
-      *width: 100%;
-    }
-  </style>
 </head>
 
 
@@ -65,7 +55,7 @@
 
           <div class="btn-toolbar dashhead-toolbar">
             <div class="btn-toolbar-item input-with-icon">
-              <span class="icon">Maybe a nice icon here</span>
+
             </div>
           </div>
         </div>
@@ -74,27 +64,29 @@
 
         <form>
           <div class="form-group row">
-            <label for="inputIndex1" class="col-sm-2 col-form-label">Index1</label>
+            <label for="inputIndex1" class="col-sm-2 col-form-label">Heat Index</label>
             <div class="col-sm-5">
               <input type="number" class="form-control" id="inputIndex1" placeholder="Heat Index importance (0 to 100)">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputIndex2" class="col-sm-2 col-form-label">Index2</label>
+            <label for="inputIndex2" class="col-sm-2 col-form-label">Air Quality Index</label>
             <div class="col-sm-5">
               <input type="number" class="form-control" id="inputIndex2" placeholder="Air Index importance (0 to 100)">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputIndex3" class="col-sm-2 col-form-label">Index3</label>
+            <label for="inputIndex3" class="col-sm-2 col-form-label">Light Index</label>
             <div class="col-sm-5">
-              <input type="number" class="form-control" id="inputIndex3" placeholder="Light Index importance (0 to 100)">
+              <input type="number" class="form-control" id="inputIndex3"
+                placeholder="Light Index importance (0 to 100)">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputIndex4" class="col-sm-2 col-form-label">Index4</label>
+            <label for="inputIndex4" class="col-sm-2 col-form-label">Sound Index</label>
             <div class="col-sm-5">
-              <input type="number" class="form-control" id="inputIndex4" placeholder="Sound Index importance (0 to 100)">
+              <input type="number" class="form-control" id="inputIndex4"
+                placeholder="Sound Index importance (0 to 100)">
             </div>
           </div>
           <div class="form-group row">
@@ -109,8 +101,8 @@
           <h3 class="hr-divider-content hr-divider-heading">Results</h3>
         </div>
         <h3 style="text-align: center;">
-        <div id="div_time" style="width: 800px; height: 10px;"></div>
-      </h3>
+          <div id="div_time" style="width: 800px; height: 10px;"></div>
+        </h3>
         <!--Final for final index-->
         <div class="row text-center mt-5">
           <div class="col-md-3 mb-2 mb-md-4"></div>
@@ -120,7 +112,7 @@
             </div>
             <h1>
               <div id="value_div_final_index" style="width: 400px; height: 20px;"></div>
-              </h1>
+            </h1>
           </div>
         </div>
 
@@ -131,30 +123,30 @@
             <div id="chart_div_heat_index" style="width: 500px; height: 150px;" class="w-3 mx-auto">
               <!-- Heat Index gauge will be here -->
             </div>
-            <div id="value_div_heat_index" style="width: 180px; height: 60px;"></div>
+            <h4> <div id="value_div_heat_index" style="width: 180px; height: 60px;"></div></h4>
           </div>
           <div class="col-md-3 mb-2 mb-md-2">
             <div id="chart_div_light_index" style="width: 500px; height: 150px;" class="w-3 mx-auto">
               <!-- Light index gauge will be here -->
             </div>
-            <div id="value_div_light_index" style="width: 180px; height: 60px;"></div>
+            <h4> <div id="value_div_light_index" style="width: 180px; height: 60px;"></div></h4>
           </div>
           <div class="col-md-3 mb-4 mb-md-2">
             <div id="chart_div_sound_index" style="width: 500px; height: 150px;" class="w-3 mx-auto">
               <!-- Sound index gauge will be here -->
             </div>
-            <div id="value_div_sound_index" style="width: 180px; height: 60px;"></div>
+            <h4> <div id="value_div_sound_index" style="width: 180px; height: 60px;"></div> </h4>
           </div>
           <div class="col-md-3 mb-4 mb-md-2">
             <div id="chart_div_air_index" style="width: 500px; height: 150px;" class="w-3 mx-auto">
               <!-- Air quality index gauge will be here -->
             </div>
-            <div id="value_div_air_index" style="width: 180px; height: 60px;"></div>
+            <h4> <div id="value_div_air_index" style="width: 180px; height: 60px;"></div> </h4>
           </div>
         </div>
 
         <!-- <button onclick="hideValues()">Show more details</button> -->
-        <button onclick="hideValues()">Show more details</button>
+        <button onclick="hideValues()">Show Current Data</button>
         <!-- ======First row of sensor values====== -->
         <div class="row text-center mt-5">
 
@@ -174,7 +166,7 @@
             <div id="chart_div_sound" style="width: 500px; height: 150px;" class="w-3 mx-auto">
               <!-- Sound gauge will be here -->
             </div>
-            <h4>Sound</h4>
+            <h4>Noise</h4>
           </div>
           <div class="col-md-3 mb-2 mb-md-4" id="colhumid">
             <div id="chart_div_hum" style="width: 500px; height: 150px;" class="w-3 mx-auto">
@@ -205,16 +197,11 @@
             <h4>NO2</h4>
           </div>
         </div>
-        <!-- Statcards (not necessary)-->
 
 
         <hr class="mt-5">
-
-
-        <a href="#" class="btn btn-outline-primary px-3">View all data through API</a>
       </div>
     </div>
-
 
     <script src="/static/js/toggle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
@@ -227,13 +214,6 @@
     <script src="/static/js/tether.min.js"></script>
     <script type="text/javascript" src="static/js/loader.js"></script>
     <script type="text/javascript" src="static/js/gauges.js"></script>
-    <!-- <script src="/static/js/chart.js"></script> -->
-    <!-- <script src="/static/js/tablesorter.min.js"></script> -->
-    <!-- This line is for canvas circles-->
-    <!-- <script src="/static/js/toolkit.js"></script> -->
-    <!-- This line is for canvas circles-->
-    <!-- <script src="/static/js/application.js"></script>-->
-    <!-- This line is for canvas circles-->
 </body>
 
 </html>

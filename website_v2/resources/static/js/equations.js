@@ -79,16 +79,16 @@ $(document).ready(function () {
 		// Gauge Configuration
 		var options_temp = {
 			width: 500, height: 150, min: 0, max: 5,
-			greenFrom: 4, greenTo: 5,
-			redFrom: 0, redTo: 2,
-			yellowFrom: 2, yellowTo: 4,
+			greenFrom: 3.5, greenTo: 5,
+			redFrom: 0, redTo: 1.5,
+			yellowFrom: 1.5, yellowTo: 3.5,
 			minorTicks: 5
 		};
 		// Associate Gauge to the html ID 
 		var chart = new google.visualization.Gauge(document.getElementById('chart_div_heat_index'));
 		// Instantiate and draw our chart, passing in some options
 		chart.draw(data, options_temp);
-		document.getElementById("value_div_heat_index").innerHTML = "Heat Index: " + heat_index + "<br>" + "Stauts: " + status + "<br>";
+		document.getElementById("value_div_heat_index").innerHTML = status;
 		// Update data every 10 seconds
 		setInterval(function () {
 			var last_data = get_index();
@@ -96,7 +96,7 @@ $(document).ready(function () {
 			status = last_data[1];
 			data.setValue(0, 1, heat_index);
 			chart.draw(data, options_temp);
-			document.getElementById("value_div_heat_index").innerHTML = "Heat Index: " + heat_index + "<br>" + "Stauts: " + status + "<br>";
+			document.getElementById("value_div_heat_index").innerHTML = status;
 		}, 10000);
 	}
 
@@ -249,16 +249,16 @@ $(document).ready(function () {
 		// Gauge Configuration
 		var options_air = {
 			width: 500, height: 150, min: 0, max: 5,
-			greenFrom: 4, greenTo: 5,
-			redFrom: 0, redTo: 2,
-			yellowFrom: 2, yellowTo: 4,
+			greenFrom: 3.5, greenTo: 5,
+			redFrom: 0, redTo: 1.5,
+			yellowFrom: 1.5, yellowTo: 3.5,
 			minorTicks: 5
 		};
 		// Associate Gauge to the html ID 
 		var chart = new google.visualization.Gauge(document.getElementById('chart_div_air_index'));
 		// Instantiate and draw our chart, passing in some options
 		chart.draw(data, options_air);
-		document.getElementById("value_div_air_index").innerHTML = "Air Quality Index: " + air_index + "<br>" + "Stauts: " + status + "<br>";
+		document.getElementById("value_div_air_index").innerHTML = status;
 		// Update data every 10 seconds
 		setInterval(function () {
 			var last_data = get_index();
@@ -266,7 +266,7 @@ $(document).ready(function () {
 			var status = last_data[1];
 			data.setValue(0, 1, air_index);
 			chart.draw(data, options_air);
-			document.getElementById("value_div_air_index").innerHTML = "Air Quality Index: " + air_index + "<br>" + "Stauts: " + status + "<br>";
+			document.getElementById("value_div_air_index").innerHTML = status;
 		}, 10000);
 	}
 	// get Light Index Function //
@@ -313,16 +313,16 @@ $(document).ready(function () {
 		// Gauge Configuration
 		var options_light_index = {
 			width: 500, height: 150, min: 0, max: 5,
-			greenFrom: 4, greenTo: 5,
-			redFrom: 0, redTo: 2,
-			yellowFrom: 2, yellowTo: 4,
+			greenFrom: 3.5, greenTo: 5,
+			redFrom: 0, redTo: 1.5,
+			yellowFrom: 1.5, yellowTo: 3.5,
 			minorTicks: 5
 		};
 		// Associate Gauge to the html ID
 		var chart = new google.visualization.Gauge(document.getElementById('chart_div_light_index'));
 		// Instantiate and draw our chart, passing in some options.
 		chart.draw(data, options_light_index);
-		document.getElementById("value_div_light_index").innerHTML = "Light Index: " + light_index + "<br>" + "Stauts: " + status + "<br>";
+		document.getElementById("value_div_light_index").innerHTML = status;
 		// Update data every 10 seconds
 		setInterval(function () {
 			// Parse the responseText to JSON
@@ -332,7 +332,7 @@ $(document).ready(function () {
 			var status = last_data[1];
 			data.setValue(0, 1, light_index);
 			chart.draw(data, options_light_index);
-			document.getElementById("value_div_light_index").innerHTML = "Light Index: " + light_index + "<br>" + "Stauts: " + status + "<br>";
+			document.getElementById("value_div_light_index").innerHTML = status;
 		}, 10000);
 	}
 
@@ -375,16 +375,16 @@ $(document).ready(function () {
 		// Gauge Configuration
 		var options_sound_index = {
 			width: 500, height: 150, min: 0, max: 5,
-			greenFrom: 4, greenTo: 5,
-			redFrom: 0, redTo: 2,
-			yellowFrom: 2, yellowTo: 4,
+			greenFrom: 3.5, greenTo: 5,
+			redFrom: 0, redTo: 1.5,
+			yellowFrom: 1.5, yellowTo: 3.5,
 			minorTicks: 5
 		};
 		// Associate Gauge to the html ID
 		var chart = new google.visualization.Gauge(document.getElementById('chart_div_sound_index'));
 		// Instantiate and draw our chart, passing in some options.
 		chart.draw(data, options_sound_index);
-		document.getElementById("value_div_sound_index").innerHTML = "Noise Index: " + sound_index + "<br>" + "Stauts: " + status + "<br>";
+		document.getElementById("value_div_sound_index").innerHTML = status;
 		// Update data every 10 seconds
 		setInterval(function () {
 			// Parse the responseText to JSON
@@ -395,7 +395,7 @@ $(document).ready(function () {
 			var sound_index = last_data[0];
 			data.setValue(0, 1, sound_index);
 			chart.draw(data, options_sound_index);
-			document.getElementById("value_div_sound_index").innerHTML = "Noise Index: " + sound_index + "<br>" + "Stauts: " + status + "<br>";
+			document.getElementById("value_div_sound_index").innerHTML = status;
 		}, 10000);
 	}
 	////////////////////////////////////////////////////////
@@ -466,7 +466,7 @@ $(document).ready(function () {
 		sound_index = req_index[0];
 		sound_status = req_index[1];
 
-		final_index = ( heat_index + air_index + light_index +sound_index) / 4;
+		final_index = (heat_index + air_index + light_index + sound_index) / 4;
 		if (final_index <= 1) {
 			status = "Hell";
 		} else if (final_index > 1 && final_index <= 2) {
@@ -498,10 +498,10 @@ $(document).ready(function () {
 		// Gauge Configuration
 		var options_index = {
 			width: 350, height: 350, min: 0, max: 5,
-			greenFrom: 4, greenTo: 5,
-			redFrom: 0, redTo: 2,
-			yellowFrom: 2, yellowTo: 4,
-			minorTicks: 5
+			greenFrom: 3.5, greenTo: 5,
+			redFrom: 0, redTo: 1.5,
+			yellowFrom: 1.5, yellowTo: 3.5,
+			minorTicks: 5, mayorTicks: 10
 		};
 		// Associate Gauge to the html ID
 		var chart = new google.visualization.Gauge(document.getElementById('chart_div_final_index'));
@@ -522,7 +522,7 @@ $(document).ready(function () {
 	$("#get_button").click(function () {
 		console.log("clicked")
 
-		
+
 		function drawChart_final_index() {
 			// extract latest data from the db using the API
 			var final = getFinalIndex();
@@ -536,10 +536,10 @@ $(document).ready(function () {
 			// Gauge Configuration
 			var options_index = {
 				width: 500, height: 150, min: 0, max: 5,
-				greenFrom: 4, greenTo: 5,
-				redFrom: 0, redTo: 2,
-				yellowFrom: 2, yellowTo: 4,
-				minorTicks: 5
+				greenFrom: 3.5, greenTo: 5,
+				redFrom: 0, redTo: 1.5,
+				yellowFrom: 1.5, yellowTo: 3.5,
+				minorTicks: 5, mayorTicks: 10
 			};
 			// Associate Gauge to the html ID
 			var chart = new google.visualization.Gauge(document.getElementById('chart_div_final_index'));
