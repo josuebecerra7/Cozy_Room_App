@@ -1,11 +1,5 @@
 
 	function hideValues() {
-			var x = document.getElementById("coltime");
-			if (x.style.display === "none") {
-			x.style.display = "block";
-			} else {
-			x.style.display = "none";
-			 }
 			
 			var x = document.getElementById("coltemp");
 			if (x.style.display === "none") {

@@ -137,10 +137,10 @@ function drawChart_sound() {
     ]);
     // Gauge Configuration
     var options_sound = {
-        width: 110, height: 110, min: 0, max: 50,
-        greenFrom: 0, greenTo: 30,
-        redFrom: 40, redTo: 50,
-        yellowFrom:30, yellowTo: 40,
+        width: 110, height: 110, min: 0, max: 800,
+        greenFrom: 0, greenTo: 200,
+        redFrom: 450, redTo: 800,
+        yellowFrom:200, yellowTo: 450,
         minorTicks: 5
       };
     // Associate Gauge to the html ID
